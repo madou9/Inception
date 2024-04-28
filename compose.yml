@@ -29,6 +29,5 @@ services:
       - ./database:/var/lib/mysql
     networks:
       inception:
-
 networks:
   inception:
