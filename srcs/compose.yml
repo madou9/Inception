@@ -13,6 +13,7 @@ services:
       - ./web:/var/www/html
     networks:
       inception:
+
   wordpress:
     environment:
       - WP_URL=${WP_URL}
@@ -32,7 +33,12 @@ services:
       - ./web:/var/www/html
     networks:
       inception:
+
   mariadb:
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
     build: requirements/mariadb/.
     container_name: mariadb
     volumes:
