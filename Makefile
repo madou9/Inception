@@ -17,8 +17,12 @@ stop:
 
 clean :
 	$(COMPOSE) down
+	@docker system prune -a
 
-fclean : clean
+fclean :
+	@docker	stop $$(docker ps -qa)
+	@docker system prune -af --volumes
+	@docker	network prune --force
 
 re:
 	fclean all
