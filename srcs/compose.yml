@@ -38,6 +38,9 @@ services:
       - WP_USER=${WP_USER}
       - WP_PASS=${WP_PASS}
       - WP_EMAIL=${WP_EMAIL}
+      - W_USER1=${W_USER1}
+      - W_UPASS=${W_UPASS}
+      - W_UEMAIL=${W_UEMAIL}
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASS}
