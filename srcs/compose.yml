@@ -2,18 +2,16 @@ version: '3.8'
 
 volumes:
   db_data:
-    name: mariadb
     driver: local
     driver_opts:
-      device: /home/ihama/data/database/.
+      device: /home/ihama/data
       o: bind
       type: none
 
   wp_data:
-    name: wordpress
     driver: local
     driver_opts:
-      device: /home/ihama/data/web/.
+      device: /home/ihama/data
       o: bind
       type: none
 
@@ -23,13 +21,12 @@ services:
     container_name: nginx
     depends_on:
       - wordpress
-      - mariadb
     ports: 
       - "443:443"
     volumes:
-      - /home/ihama/data/web:/var/www/html
+      - wp_data:/var/www/html
     networks:
-      inception:
+      - inception
 
   wordpress:
     environment:
@@ -52,7 +49,7 @@ services:
     volumes:
       - wp_data:/var/www/html
     networks:
-      inception:
+      - inception
 
   mariadb:
     environment:
@@ -64,7 +61,9 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     networks:
-      inception:
+      - inception
 
 networks:
-  inception:
+        inception:
+                name: inception
+
