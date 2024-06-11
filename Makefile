@@ -1,6 +1,6 @@
 NAME = inception
 
-COMPOSE = cd srcs && docker-compose -f compose.yml
+COMPOSE = cd srcs && docker-compose -f docker-compose.yml
 
 all: $(NAME)
 
