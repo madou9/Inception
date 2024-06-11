@@ -3,13 +3,11 @@ version: '3.8'
 volumes:
   db_data:
     name: mariadb
-    driver: local
     driver_opts:
       device: /home/ihama/data/database/.
 
   wp_data:
     name: wordpress
-    driver: local
     driver_opts:
       device: /home/ihama/data/web/.
 
