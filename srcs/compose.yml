@@ -5,11 +5,13 @@ volumes:
     name: mariadb
     driver_opts:
       device: /home/ihama/data/database/.
+      type: none
 
   wp_data:
     name: wordpress
     driver_opts:
       device: /home/ihama/data/web/.
+      type: none
 
 services:
   nginx:
