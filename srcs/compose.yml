@@ -6,6 +6,7 @@ volumes:
     driver: local
     driver_opts:
       device: /home/ihama/data/database/.
+      o: bind
       type: none
 
   wp_data:
@@ -13,6 +14,7 @@ volumes:
     driver: local
     driver_opts:
       device: /home/ihama/data/web/.
+      o: bind
       type: none
 
 services:
