@@ -10,4 +10,4 @@ COPY ./tools/script.sh .
 
 RUN mkdir /run/mysqld && chmod +x script.sh
 
-CMD ["./tools/script.sh"]
+CMD ["./script.sh"]
