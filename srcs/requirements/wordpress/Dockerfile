@@ -8,8 +8,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install  -y php-fpm php-mysq
 
 COPY www.conf /etc/php/8.2/fpm/pool.d/.
 
-COPY script.sh .
+COPY ./tools/script.sh .
 
 RUN chmod +x script.sh
 
-CMD ["./script.sh"]
+CMD ["./tools/script.sh"]
